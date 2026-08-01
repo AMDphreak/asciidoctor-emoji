@@ -2,9 +2,9 @@
 
 ## Unreleased
 
-### Changed
+### Breaking Changes
 
-- **Breaking:** the source entry point is renamed from `src/asciidoctor-emoji.js` to `src/index.js`, and the build output moves from `dist/` to `build/`, matching the layout used by `asciidoctor.js` and `asciidoctor-kroki`. `dist/asciidoctor-emoji.cjs` becomes `build/node/index.cjs`. The default browser build (`browser`/`exports.browser`) is now a plain ESM bundle at `build/browser/index.js` instead of the UMD bundle that used to live at `dist/browser/asciidoctor-emoji.js`; the UMD build is still published, unchanged in format, but moves to `build/browser/index.global.js` and is no longer wired into `package.json` resolution — reference it directly by path for non-module `<script>`/legacy bundler usage. Consumers using the package's `main`/`module`/`exports` fields (the documented way to use the package) are unaffected; anyone importing `src/asciidoctor-emoji.js`, `dist/asciidoctor-emoji.cjs`, or `dist/browser/asciidoctor-emoji.js` by its literal path needs to update it.
+- Rename `src/asciidoctor-emoji.js` to `src/index.js` and move the build output from `dist/` to `build/` (`dist/asciidoctor-emoji.cjs` → `build/node/index.cjs`), matching `asciidoctor.js`'s and `asciidoctor-kroki`'s layout. The default browser build (`browser`/`exports.browser`) switches from UMD to a plain ESM bundle at `build/browser/index.js`; the UMD build still ships, now at `build/browser/index.global.js`, referenced directly by path instead of through `package.json`
 
 ## v1.0.0 (2026-07-22)
 
