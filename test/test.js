@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
 import { convert, Extensions, MemoryLogger } from '@asciidoctor/core'
-import { register } from '../src/asciidoctor-emoji.js'
+import { register } from '../src/index.js'
 
 describe('Registration', () => {
   it('should register the extension', () => {

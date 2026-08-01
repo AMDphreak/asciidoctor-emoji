@@ -59,7 +59,7 @@ Asciidoctor.js is published as a native ES module, so it must be loaded with `<s
     <div id="content"></div>
     <script type="module">
       import { convert, Extensions } from './node_modules/@asciidoctor/core/build/browser/index.js'
-      import { register } from './node_modules/asciidoctor-emoji/src/asciidoctor-emoji.js'
+      import { register } from './node_modules/asciidoctor-emoji/src/index.js'
 
       const input = 'I emoji:heart[1x] Asciidoctor.js!'
 
@@ -72,7 +72,7 @@ Asciidoctor.js is published as a native ES module, so it must be loaded with `<s
 </html>
 ```
 
-A UMD build is also published at `dist/browser/asciidoctor-emoji.js` (exposing a global `AsciidoctorEmoji`) for bundlers or non-module `<script>` usage.
+A UMD build is also published at `build/browser/index.global.js` (exposing a global `AsciidoctorEmoji`) for bundlers or non-module `<script>` usage.
 
 ## Usage
 

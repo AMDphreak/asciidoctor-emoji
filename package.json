@@ -3,16 +3,17 @@
   "version": "1.0.0",
   "description": "Asciidoctor Emoji Extension",
   "type": "module",
-  "main": "./dist/asciidoctor-emoji.cjs",
-  "browser": "./dist/browser/asciidoctor-emoji.js",
+  "main": "./build/node/index.cjs",
+  "module": "./src/index.js",
+  "browser": "./build/browser/index.js",
   "exports": {
-    "browser": "./dist/browser/asciidoctor-emoji.js",
-    "import": "./src/asciidoctor-emoji.js",
-    "require": "./dist/asciidoctor-emoji.cjs"
+    "browser": "./build/browser/index.js",
+    "import": "./src/index.js",
+    "require": "./build/node/index.cjs"
   },
   "files": [
     "src",
-    "dist"
+    "build"
   ],
   "engines": {
     "node": ">=20"
