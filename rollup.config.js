@@ -1,16 +1,23 @@
 export default [
   {
-    input: 'src/asciidoctor-emoji.js',
+    input: 'src/index.js',
     output: {
-      file: 'dist/asciidoctor-emoji.cjs',
+      file: 'build/node/index.cjs',
       format: 'cjs',
       exports: 'named',
     },
   },
   {
-    input: 'src/asciidoctor-emoji.js',
+    input: 'src/index.js',
     output: {
-      file: 'dist/browser/asciidoctor-emoji.js',
+      file: 'build/browser/index.js',
+      format: 'esm',
+    },
+  },
+  {
+    input: 'src/index.js',
+    output: {
+      file: 'build/browser/index.global.js',
       format: 'umd',
       name: 'AsciidoctorEmoji',
       exports: 'named',
