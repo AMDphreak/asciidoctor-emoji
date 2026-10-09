@@ -4,7 +4,7 @@
 
 ### Added
 
-- Rewrite literal Unicode emoji in prose to `emoji:name[]` before parsing (Twemoji / `emoji-pattern` / `emojis: font`), so pasted characters render consistently across platforms. Skips listing, passthrough, and literal blocks; disable with `:emoji-literals: false`
+- Rewrite literal Unicode emoji in prose to `emoji:name[]` before parsing (Twemoji / `emoji-pattern` / `emojis: font`), so pasted characters render consistently across platforms. Skips listing, passthrough, and literal blocks; disable with `:emoji-literals: false`. Antora 3 / core 2–3 sites can use interim [@antora-supplemental/asciidoctor-emoji-literals](https://github.com/antora-supplemental/asciidoctor-emoji-literals) with official npm `asciidoctor-emoji@0.5.x` until this release runs on `@asciidoctor/core` 4
 
 ### Breaking Changes
 
