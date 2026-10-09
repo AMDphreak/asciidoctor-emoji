@@ -1,4 +1,5 @@
 import twemojiMap from './twemoji-map.js'
+import { emojiLiteralPreprocessor } from './literal-emoji.js'
 
 // Converts a hyphen-joined hex codepoint sequence (e.g. '1f9d1-200d-1f3a8') into the
 // actual emoji character(s) it represents, for CDNs that key images by the raw emoji
@@ -81,6 +82,7 @@ function emojiWebfontDocinfoProcessor() {
 }
 
 export function register(registry) {
+  registry.preprocessor(emojiLiteralPreprocessor)
   registry.inlineMacro(emojiInlineMacro)
   registry.docinfoProcessor(emojiWebfontDocinfoProcessor)
   return registry

@@ -76,6 +76,16 @@ A UMD build is also published at `build/browser/index.global.js` (exposing a glo
 
 ## Usage
 
+### Literal Unicode emoji
+
+When the extension is registered, **Unicode emoji pasted into prose** (for example `🚀`) are rewritten to the
+`emoji:name[]` macro before parsing, so they use the same Twemoji (or `emoji-pattern` / `emojis: font`) path as
+explicit macros. Listing, passthrough, and literal blocks delimited by `----`, `++++`, or `....` are left unchanged.
+
+To turn this off for a document, set `:emoji-literals: false` (in the AsciiDoc source or via playbook / CLI attributes).
+
+### `emoji:` macro
+
 Use `emoji:` followed by the name of your emoji (and don't forget the square brackets). For instance `wink`:
 
 ```adoc

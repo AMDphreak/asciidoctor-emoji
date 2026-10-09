@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+- Rewrite literal Unicode emoji in prose to `emoji:name[]` before parsing (Twemoji / `emoji-pattern` / `emojis: font`), so pasted characters render consistently across platforms. Skips listing, passthrough, and literal blocks; disable with `:emoji-literals: false`
+
 ### Breaking Changes
 
 - Rename `src/asciidoctor-emoji.js` to `src/index.js` and move the build output from `dist/` to `build/` (`dist/asciidoctor-emoji.cjs` → `build/node/index.cjs`), matching `asciidoctor.js`'s and `asciidoctor-kroki`'s layout. The default browser build (`browser`/`exports.browser`) switches from UMD to a plain ESM bundle at `build/browser/index.js`; the UMD build still ships, now at `build/browser/index.global.js`, referenced directly by path instead of through `package.json`

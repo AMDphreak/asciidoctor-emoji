@@ -290,3 +290,33 @@ describe('Conversion', () => {
     )
   })
 })
+
+describe('Literal Unicode emoji', () => {
+  it('rewrites literal emoji in prose to Twemoji images', async () => {
+    const input = 'Ship it 🚀 today'
+    const registry = Extensions.create()
+    register(registry)
+    const html = await convert(input, { extension_registry: registry })
+    assert.ok(html.includes('alt="rocket"'))
+    assert.ok(html.includes('1f680.svg'))
+    assert.ok(!html.includes('🚀'))
+  })
+
+  it('does not rewrite literal emoji inside a listing block', async () => {
+    const input = '----\n🚀\n----'
+    const registry = Extensions.create()
+    register(registry)
+    const html = await convert(input, { extension_registry: registry })
+    assert.ok(html.includes('🚀'))
+    assert.ok(!html.includes('alt="rocket"'))
+  })
+
+  it('can be disabled with :emoji-literals: false', async () => {
+    const input = ':emoji-literals: false\n\nShip 🚀'
+    const registry = Extensions.create()
+    register(registry)
+    const html = await convert(input, { extension_registry: registry })
+    assert.ok(html.includes('🚀'))
+    assert.ok(!html.includes('alt="rocket"'))
+  })
+})
